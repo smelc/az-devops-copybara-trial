@@ -18,6 +18,9 @@ jobs:
         run: |
           az devops configure --defaults organization=https://dev.azure.com/kaiko-azure-devops/
           az devops configure --defaults project=kaiko-copybara-trial
+      - name: az account show
+        run: |
+          az account show
       - name: az repos prs list
         run: |
           az repos pr list
