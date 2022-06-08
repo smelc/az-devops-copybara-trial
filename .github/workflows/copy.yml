@@ -21,6 +21,11 @@ jobs:
       - name: az account show
         run: |
           az account show
+      - name: az devops PAT login
+        env:
+          AZURE_PAT: ${{ secrets.AZURE_PAT }}
+        run: |
+          echo "$AZURE_PAT" | az devops login
       - name: az repos prs list
         run: |
           az repos pr list
